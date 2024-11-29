@@ -35,7 +35,7 @@ function getSessionId() {
 }
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: 'http://localhost:8081',
   withCredentials: true,
   xsrfCookieName: 'csrftoken',
   xsrfHeaderName: 'X-CSRFToken',
@@ -148,7 +148,7 @@ export const machines = {
   },
 
   getAvailable: async (start: string, end: string) => {
-    const response = await api.get<Machine[]>('/machines/available/', {
+    const response = await api.get<Machine[]>('/machines/available_at_interval/', {
       params: { start, end }
     });
     return response.data;
