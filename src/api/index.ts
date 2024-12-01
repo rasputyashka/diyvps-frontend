@@ -148,7 +148,7 @@ export const machines = {
   },
 
   getAvailable: async (start: string, end: string) => {
-    const response = await api.get<Machine[]>('/machines/available/', {
+    const response = await api.get<Machine[]>('/machines/available_at_interval/', {
       params: { start, end }
     });
     return response.data;
